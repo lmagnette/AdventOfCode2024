@@ -6,25 +6,25 @@ This repository contains solutions to the Advent of Code 2024 challenges, writte
 
 ## Technologies Used
 
-	•	Java
-	•	JBang: Used to easily run Java programs as scripts without the need for manual compilation.
-	•	Picocli: Provides a framework for building command-line applications with advanced parsing capabilities and generated help messages.
+- Java
+- JBang: Used to easily run Java programs as scripts without the need for manual compilation.
+- Picocli: Provides a framework for building command-line applications with advanced parsing capabilities and generated help messages.
 
 ## Prerequisites
 
 ## Before running the scripts, ensure you have the following installed:
 
-	•	Java JDK 17 or later: Required to run Java applications.
-	•	JBang: Simplifies running Java scripts. 
+- Java JDK 17 or later: Required to run Java applications.
+- JBang: Simplifies running Java scripts. 
 
 ## Scripts in This Repository
 
 Below is a brief overview of each script and its purpose:
 
-	1.	Day 1 
+1. Day 1 
      - Historian Hysteria: Analyzes historical location data to determine possible locations of the missing Chief Historian.
      - Historian Hysteria pat 2: Evaluates how often each number from the left list appears in the right list and computes a total similarity score. This considers potential misinterpretations or errors in recording the location IDs.
-	2.	Day 2
+2. Day 2
     - Reactor Safety Check: Assesses safety reports from the Red-Nosed Reindeer nuclear plant for compliance with safety standards.
     - Reactor Safety Check With Dampener: Extends the Day 2 safety check to include a tolerance for one faulty level per report, simulating a problem dampener device.
 
@@ -40,9 +40,9 @@ Adding New Solutions
 
 To add a new solution:
 
-	1.	Create a new Java file using the naming convention DayX_<PuzzleName>.java.
-	2.	Implement the solution using Java and, optionally, Picocli for argument parsing.
-	3.	Update this README with the new script’s details under “Scripts in This Repository.”
+1.	Create a new Java file using the naming convention DayX_<PuzzleName>.java.
+2.	Implement the solution using Java and, optionally, Picocli for argument parsing.
+3.	Update this README with the new script’s details under “Scripts in This Repository.”
 
 Contributing
 
