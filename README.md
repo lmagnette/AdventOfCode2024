@@ -36,7 +36,7 @@ jbang <script-name>.java --file path/to/your/input.txt
 
 Replace <script-name> with the actual script file name and path/to/your/input.txt with the path to your input data file.
 
-Adding New Solutions
+## Adding New Solutions
 
 To add a new solution:
 
@@ -44,12 +44,10 @@ To add a new solution:
 2.	Implement the solution using Java and, optionally, Picocli for argument parsing.
 3.	Update this README with the new script’s details under “Scripts in This Repository.”
 
-Contributing
+## Contributing
 
 Contributions to this repository are welcome. Please ensure your pull requests are well-documented and tested. For major changes, please open an issue first to discuss what you would like to change.
 
-License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-This README template provides a comprehensive introduction and guide to your Advent of Code 2024 repository, ensuring that contributors and users can easily understand and interact with your solutions. Adjust the specifics as necessary to fit the actual content and structure of your repository.
