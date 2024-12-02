@@ -14,7 +14,7 @@ import picocli.CommandLine.Option;
 @Command(name = "HistorianHysteria", mixinStandardHelpOptions = true, version = "1.0",
          description = "Calculates the distance between two lists of historically significant location IDs.")
 public class HistorianHysteria implements Runnable {
-    //Output should be 1970720
+
     @Option(names = {"-f", "--file"}, description = "The file path for the list of location ID pairs.", defaultValue="./input.txt", required = true)
     private String filePath;
 
