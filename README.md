@@ -14,7 +14,7 @@ This repository contains solutions to the Advent of Code 2024 challenges, writte
 
 ## Before running the scripts, ensure you have the following installed:
 
-- Java JDK 17 or later: Required to run Java applications.
+- Java JDK 21 or later: Required to run Java applications.
 - JBang: Simplifies running Java scripts. 
 
 ## Scripts in This Repository
@@ -23,10 +23,13 @@ Below is a brief overview of each script and its purpose:
 
 1. Day 1 
      - Historian Hysteria: Analyzes historical location data to determine possible locations of the missing Chief Historian.
-     - Historian Hysteria pat 2: Evaluates how often each number from the left list appears in the right list and computes a total similarity score. This considers potential misinterpretations or errors in recording the location IDs.
+     - Historian Hysteria part 2: Evaluates how often each number from the left list appears in the right list and computes a total similarity score. This considers potential misinterpretations or errors in recording the location IDs.
 2. Day 2
     - Reactor Safety Check: Assesses safety reports from the Red-Nosed Reindeer nuclear plant for compliance with safety standards.
     - Reactor Safety Check With Dampener: Extends the Day 2 safety check to include a tolerance for one faulty level per report, simulating a problem dampener device.
+3. Day 3
+    - Mull It Over: Identify and compute the results of valid multiplication instructions from a corrupted string of data.
+    - Mull It Over With Conditionals: Extend the computation to include conditional statements that enable or disable multiplication instructions based on their sequence in the corrupted data.  
 
 ## Running the Scripts
 
