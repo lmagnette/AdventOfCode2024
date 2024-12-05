@@ -33,6 +33,9 @@ Below is a brief overview of each script and its purpose:
 4. [Day 4](https://adventofcode.com/2024/day/4)]
     - Comprehensive XMAS Word Search: Count all instances of the word “XMAS” in all directions in a word search grid, including horizontally, vertically, and diagonally, both forwards and backwards.
     - Complex X-MAS Pattern Detection: Identify and count all instances of the pattern “X-MAS”, where “MAS” forms an X shape around a central ‘A’, considering all diagonal directions and allowing for overlap, in a word search grid.   
+ 5. [Day 5](https://adventofcode.com/2024/day/5)]]    
+    - Validate Page Order: Verify if page updates are in the correct order based on predefined page sequencing rules, and sum the middle page numbers of valid sequences.
+    -  Reorder and Analyze Updates: Identify incorrectly ordered page updates, reorder them according to specified rules using topological sorting, and calculate the sum of middle page numbers from the reordered updates.
 
 ## Running the Scripts
 
