@@ -36,6 +36,12 @@ Below is a brief overview of each script and its purpose:
  5. [Day 5](https://adventofcode.com/2024/day/5)    
     - Validate Page Order: Verify if page updates are in the correct order based on predefined page sequencing rules, and sum the middle page numbers of valid sequences.
     -  Reorder and Analyze Updates: Identify incorrectly ordered page updates, reorder them according to specified rules using topological sorting, and calculate the sum of middle page numbers from the reordered updates.
+ 6. [Day 6](https://adventofcode.com/2024/day/6)
+    - Guard Patrol Path Simulation: Simulate the guard’s patrol path in a grid and determine the number of distinct positions visited before leaving the area.
+    - Find Loop-Causing Obstruction Positions: Identify positions to place an obstruction in the grid that will cause the guard to get stuck in a loop, making the lab safe to search.
+ 7. [Day 7](https://adventofcode.com/2024/day/7)
+    - Calibration with Addition and Multiplication: Determine which equations can be made true using only addition (+) and multiplication (*), following strict left-to-right evaluation rules, and calculate the total calibration result from valid test values.
+    - Calibration with Addition, Multiplication, and Concatenation: Extend the calibration by allowing concatenation (||) as a third operator, in addition to addition (+) and multiplication (*), to determine which equations can be made true under left-to-right evaluation rules, and compute the updated total calibration result.     
 
 ## Running the Scripts
 
