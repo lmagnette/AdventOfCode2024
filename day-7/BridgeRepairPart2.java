@@ -5,11 +5,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
+import java.util.stream.IntStream;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
-@Command(name = "BridgeRepair", mixinStandardHelpOptions = true, version = "1.3",
+@Command(name = "BridgeRepairPart2", mixinStandardHelpOptions = true, version = "1.5",
          description = "Determine which equations could possibly be true using +, *, and || operators.")
 public class BridgeRepairPart2 implements Runnable {
 
@@ -24,7 +25,8 @@ public class BridgeRepairPart2 implements Runnable {
     public void run() {
         try {
             var lines = Files.readAllLines(filePath);
-            var totalCalibrationResult = lines.stream()
+
+            var totalCalibrationResult = lines.parallelStream()
                                               .map(this::parseLine)
                                               .filter(Objects::nonNull)
                                               .filter(this::canAchieveTarget)
@@ -55,39 +57,34 @@ public class BridgeRepairPart2 implements Runnable {
         if (equation.numbers.length < 2) return false;
 
         var numOperators = equation.numbers.length - 1;
-        var maxCombinations = (int) Math.pow(3, numOperators); // 3^(numOperators) combinations
+        var powersOfThree = IntStream.rangeClosed(0, numOperators)
+                                     .map(i -> (int) Math.pow(3, i))
+                                     .toArray();
 
-        for (int operatorMask = 0; operatorMask < maxCombinations; operatorMask++) {
-            if (evaluateExpression(equation.numbers, operatorMask) == equation.target) {
-                return true;
-            }
-        }
-
-        return false;
+        return IntStream.range(0, powersOfThree[numOperators])
+                        .parallel()
+                        .anyMatch(operatorMask -> evaluateExpression(equation.numbers(), operatorMask, powersOfThree) == equation.target());
     }
 
-    private long evaluateExpression(long[] numbers, int operatorMask) {
-        long result = numbers[0];
-        for (int i = 0; i < numbers.length - 1; i++) {
-            int operator = (operatorMask / (int) Math.pow(3, i)) % 3; // Extract operator at position i
-            switch (operator) {
-                case 0 -> result += numbers[i + 1]; // Addition
-                case 1 -> result *= numbers[i + 1]; // Multiplication
-                case 2 -> result = concatenate(result, numbers[i + 1]); // Concatenation
-            }
+    private long evaluateExpression(long[] numbers, int operatorMask, int[] powersOfThree) {
+        var result = numbers[0];
+        for (var i = 0; i < numbers.length - 1; i++) {
+            var operator = (operatorMask / powersOfThree[i]) % 3;
+            result = switch (operator) {
+                case 0 -> result + numbers[i + 1]; // Addition
+                case 1 -> result * numbers[i + 1]; // Multiplication
+                case 2 -> concatenate(result, numbers[i + 1]); // Concatenation
+                default -> throw new IllegalStateException("Unexpected operator: " + operator);
+            };
         }
         return result;
     }
 
     private long concatenate(long left, long right) {
-        String concatenated = String.valueOf(left) + String.valueOf(right);
-        return Long.parseLong(concatenated);
+        var multiplier = 1L;
+        while (multiplier <= right) multiplier *= 10;
+        return left * multiplier + right;
     }
 
-    record Equation(long target, long[] numbers) {
-        @Override
-        public String toString() {
-            return target + ": " + Arrays.toString(numbers);
-        }
-    }
+    record Equation(long target, long[] numbers) {}
 }
